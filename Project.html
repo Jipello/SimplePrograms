@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="Project.css" type="css/stylesheet">
+</head>
+
+<body>
+
+    <div id="radioButtons">
+        <label>Select your pack first:</label> <br>
+        <input type="radio" id="drunk" name="subject" onclick="Pack.drunk()" />
+        <label>Drunk</label>
+        <br>
+        <input type="radio" id="exercise" name="subject" onclick="Pack.exercise()" />
+        <label>Exercise</label>
+        <br>
+        <input type="radio" id="dare" name="subject" onclick="Pack.dare()" />
+        <label>Dare</label>
+        <br>
+    </div>
+
+    <button id='punishButton' onclick="">
+        Click for Forfeit
+    </button>
+
+    <p id='poo'>
+        punishment will be posted here
+    </p>
+    
+    </div>
+
+    <script>
+
+        //  OBJECTS  //
+        let Punish = {
+
+            drunk: function () {
+                let punishment = [];
+
+                //punishment list
+                punishment[0] = 'Drink';
+                punishment[1] = 'Drink';
+                punishment[2] = 'Drink';
+                punishment[3] = 'Vessel';
+                punishment[4] = 'Do a shot';
+                punishment[5] = 'Drink with a partner of your choice';
+                punishment[6] = 'Not allowed to piss for 30 mins';
+                punishment[7] = 'Drink twice';
+                punishment[8] = 'Everyone drink';
+                punishment[9] = 'Vessel with a partner of your choice';
+
+                let len = punishment.length;
+                let ranNum = Math.ceil(Math.random() * len);
+
+                document.getElementById('poo').innerHTML = punishment[ranNum - 1];
+            },
+            exercise: function () {
+                let punishment = [];
+
+                //punishment list
+                punishment[0] = '10 burpees';
+                punishment[1] = 'Do a cartwheel';
+                punishment[2] = '15 push ups';
+                punishment[3] = 'sprint a short distance and back';
+                punishment[4] = '5 pull ups';
+                punishment[5] = '15 squats';
+                punishment[6] = '20 sit ups';
+                punishment[7] = '20 star jumps';
+                punishment[8] = 'micheal jackson dance moves';
+                punishment[9] = 'Touch your toes';
+
+                let len = punishment.length;
+                let ranNum = Math.ceil(Math.random() * len);
+
+                document.getElementById('poo').innerHTML = punishment[ranNum - 1];
+            },
+            dare: function () {
+                let punishment = [];
+
+                //punishment list
+                punishment[0] = 'Jump into the nearest body of water';
+                punishment[1] = 'get sprayed by water';
+                punishment[2] = 'Shout out something no one knows about you';
+                punishment[3] = 'take off a piece of clothing';
+                punishment[4] = 'jump until someone says stop';
+                punishment[5] = 'hop on one leg for 10 mins';
+                punishment[6] = 'eat a dog';
+                punishment[7] = 'repeat the name "mike hunt" 10 times';
+                punishment[8] = 'you gotta do smth the person to your right says';
+                punishment[9] = 'you got lucky this time';
+
+                let len = punishment.length;
+                let ranNum = Math.ceil(Math.random() * len);
+
+                document.getElementById('poo').innerHTML = punishment[ranNum - 1];
+            }
+        }
+        let Pack = {
+
+            drunk: function () {
+                document.getElementById('punishButton').setAttribute('onclick', 'Punish.drunk()');
+            },
+            exercise: function () {
+                document.getElementById('punishButton').setAttribute('onclick', 'Punish.exercise()');
+            },
+            dare: function () {
+                document.getElementById('punishButton').setAttribute('onclick', 'Punish.dare()');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
